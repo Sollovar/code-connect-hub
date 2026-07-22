@@ -101,6 +101,50 @@ function Index() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section id="testimonials" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="font-display text-3xl md:text-5xl">Loved by quiet builders.</h2>
+          <p className="mt-4 text-muted-foreground">
+            A few kind words from teams shipping with Lumen.
+          </p>
+        </div>
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {[
+            {
+              quote: "Lumen feels like the tool I've always wanted. Calm, fast, and out of the way.",
+              name: "Aria Chen",
+              role: "Design Lead, Northwind",
+            },
+            {
+              quote: "We shipped our redesign in half the time. The defaults are just right.",
+              name: "Marcus Vale",
+              role: "Founder, Fieldnote",
+            },
+            {
+              quote: "Finally, software that respects my attention. Our whole team switched.",
+              name: "Priya Rao",
+              role: "PM, Slowtide",
+            },
+          ].map(({ quote, name, role }) => (
+            <figure key={name} className="rounded-2xl border bg-card p-6">
+              <blockquote className="font-display text-lg leading-snug">
+                “{quote}”
+              </blockquote>
+              <figcaption className="mt-6 flex items-center gap-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent text-sm font-medium text-accent-foreground">
+                  {name.charAt(0)}
+                </div>
+                <div className="text-sm">
+                  <div className="font-medium">{name}</div>
+                  <div className="text-muted-foreground">{role}</div>
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="mx-auto max-w-6xl px-6 pb-24">
         <div className="rounded-3xl border bg-primary px-8 py-16 text-center text-primary-foreground md:py-20">
