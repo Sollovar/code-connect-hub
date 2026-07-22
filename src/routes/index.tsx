@@ -145,6 +145,48 @@ function Index() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faq" className="mx-auto max-w-3xl px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="font-display text-3xl md:text-5xl">Questions, answered.</h2>
+          <p className="mt-4 text-muted-foreground">
+            Everything you need to know before getting started.
+          </p>
+        </div>
+        <div className="mt-12 divide-y border-t border-b">
+          {[
+            {
+              q: "What is Lumen?",
+              a: "Lumen is a quiet, modern toolkit that helps teams design, build, and ship polished software without the usual noise.",
+            },
+            {
+              q: "Is there a free plan?",
+              a: "Yes. You can start for free with no credit card required, and upgrade later if your team grows.",
+            },
+            {
+              q: "How is my data handled?",
+              a: "Your data stays yours. Everything is encrypted end-to-end, and we never sell or share your information.",
+            },
+            {
+              q: "Can I use Lumen with my existing tools?",
+              a: "Absolutely. Lumen integrates smoothly with the tools most teams already rely on, so you don't have to change your workflow.",
+            },
+            {
+              q: "How do I get support?",
+              a: "Our team is available by email and chat, with typical response times under a few hours during business days.",
+            },
+          ].map(({ q, a }) => (
+            <details key={q} className="group py-5">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6">
+                <span className="font-display text-lg md:text-xl">{q}</span>
+                <span className="text-muted-foreground transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-3 text-sm text-muted-foreground md:text-base">{a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="mx-auto max-w-6xl px-6 pb-24">
         <div className="rounded-3xl border bg-primary px-8 py-16 text-center text-primary-foreground md:py-20">
